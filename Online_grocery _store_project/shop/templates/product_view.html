@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{product.name}} {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+{% load humanize %}
+<div class="container mt-4">
+    <div class="row">
+    <div class="col-md-4">
+    <div class="row">
+<img src="/media/{{product.image}}" alt="" style="width: 300px; height: 400px;">
+    </div>
+    <br>
+    <div class="row">
+        <button data-product="{{product.id}}" data-action="add" class="btn add-btn update-cart"
+        style="background-color: rgb(82, 82, 255); color: white; width: 15rem;">Add To Cart</button>    </div>
+</div>
+<div class="col-md-8">
+    <h3>{{product.name}}</h3>
+    <p style="font-size: 25px;"><b>₹ {{product.price}}</b></p>
+    <br>
+    <h5>Key Features:</h5>
+    <ul>
+       
+        <li>It is a very nice food item and customers have been satisfied with this product's delivery</li>
+       
+    </ul>
+    <br>
+     
+</div>
+</div>
+
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>WT Project</title>
+    <style>
+        .navbar {
+            background-color: rgb(82, 82, 255);
+        }
+
+        body {
+            background-color: hsl(0, 0%, 98%);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: hsl(0, 0%, 30%);
+        }
+
+        .box-element {
+            box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+            -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+            box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+        }
+
+        .product {
+            border-radius: 0 0 4px 4px;
+        }
+
+        #cart-icon {
+            width: 25px;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .col-lg-4,
+        .col-lg-6,
+        .col-lg-8,
+        .col-lg-12 {
+            margin-top: 10px;
+        }
+
+        .btn {
+            border-radius: 0;
+        }
+
+        .row-image {
+            width: 100px;
+        }
+
+        .form-field {
+            width: 250px;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .cart-row {
+            display: flex;
+            align-items: flex-stretch;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ececec;
+
+        }
+
+        .quantity {
+            display: inline-block;
+            font-weight: 700;
+            padding-right: 10px;
+
+
+        }
+
+        .chg-quantity {
+            width: 12px;
+            cursor: pointer;
+            display: block;
+            margin-top: 5px;
+            transition: .1s;
+        }
+
+        .chg-quantity:hover {
+            opacity: .6;
+        }
+
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Online Grocery Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="container w-75">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/adminpage"> <- Go Back</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" >  ---    DISPLAYING THE ADMIN VIEW FOR THE STORE   ---</a>
+                    </li>
+                   
+                    
+                </ul>
+                </div>
+               
+            </div>
+        </div>
+    </nav>
+   
+    <br>
+    <div class="box-element">
+        <div class="cart-row">
+            <div style="flex: 2;"><strong>Image</strong></div>
+            <div style="flex: 2;"><strong>Item</strong></div>
+            <div style="flex: 1;"><strong>Price</strong></div>
+         
+           
+        </div>
+    {% for result in data %}
+        <div class="cart-row">
+            <div style="flex: 2;"><img class="row-image" src="{{result.image.url}}" alt=""></div>
+            <div style="flex: 2;">{{result.name}}</div>
+            <div style="flex: 1;">₹{{result.price}}</div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+</body>
+</html>
